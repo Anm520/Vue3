@@ -1,9 +1,9 @@
 <template>
-  <div></div>
+  <div>home1</div>
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { computed, ref, reactive } from 'vue';
 export default {
   name: '',
   setup() {},
