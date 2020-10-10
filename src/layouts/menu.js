@@ -64,7 +64,7 @@ export default {
         : this.renderMenuItem(menu);
     },
     renderMenuItem(menu) {
-      const tag = 'router-link';
+      // const tag = 'routerLink';
       const props = { to: menu.path };
       return (
         <aMenuItem {...{ key: menu.path }}>

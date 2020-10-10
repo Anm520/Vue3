@@ -29,27 +29,25 @@ export const asyncRouterMap = [
                 name: 'homed3',
                 component: () => import('../views/home1.vue'),
               },
-            ]
+            ],
           },
-        ]
+        ],
       },
       {
         path: '/home2',
         name: 'home2',
-        component: () => import(/* webpackChunkName: "about" */ '../views/home1.vue'),
-        children: [
-
-        ]
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/home1.vue'),
+        children: [],
       },
       {
         path: '/home3',
         name: 'home3',
-        component: () => import(/* webpackChunkName: "about" */ '../views/home1.vue'),
-        children: [
-
-        ]
-      }
-    ]
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/home1.vue'),
+        children: [],
+      },
+    ],
   },
   {
     path: '/about',
@@ -60,31 +58,17 @@ export const asyncRouterMap = [
         path: '/about1',
         name: 'about1',
         component: () => import('../views/home1.vue'),
-
       },
       {
         path: '/about2',
         name: 'about2',
         component: () => import('../views/home1.vue'),
-
       },
       {
         path: '/about3',
         name: 'about3',
         component: () => import('../views/home1.vue'),
-      }
-    ]
-  }
-]
-export const testrouter = [
-  {
-    path: '/home1',
-    name: 'home1',
-
+      },
+    ],
   },
-  {
-    path: '/home2',
-    name: 'home1',
-
-  },
-]
+];
