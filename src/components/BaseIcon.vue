@@ -1,5 +1,5 @@
 <template>
-  <span :class="['iconfont', icon, 'baseicon']"></span>
+  <i :class="['iconfont', icon, 'baseicon']"> </i>
 </template>
 
 <script>
@@ -16,8 +16,8 @@ export default {
 </script>
 <style lang='scss' scoped>
 .baseicon {
-  font-size: 18px;
-  color: #1890ff;
+  // font-size: 14px;
+  // color: #1890ff;
   //   color: #1890ff;
 }
 </style>

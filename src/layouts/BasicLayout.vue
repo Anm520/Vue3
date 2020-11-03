@@ -47,7 +47,7 @@ import {
   MenuFoldOutlined,
   AppleOutlined,
 } from '@ant-design/icons-vue';
-import BasicMenu from './menu';
+import BasicMenu from './Menu';
 export default {
   components: {
     UserOutlined,

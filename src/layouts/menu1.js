@@ -2,7 +2,7 @@ import { computed, ref, reactive, toRefs, watchEffect, watch } from 'vue';
 import { asyncRouterMap, testrouter } from '../config/router.config.js';
 import { useRoute } from 'vue-router';
 import { AppleOutlined } from '@ant-design/icons-vue';
-
+// 废弃文件
 export default {
   name: '',
   props: {
@@ -69,26 +69,44 @@ export default {
       return (
         <aMenuItem {...{ key: menu.path }}>
           <router-link to={menu.path}>
-            {/* {this.renderIcon(menu.meta.icon)} */}
+            {this.renderIcon(menu.meta.icon)}
             <span>{menu.name}</span>
           </router-link>
         </aMenuItem>
       );
     },
-    renderTitle(name) {
+    renderTitle(name, icon) {
       return (
         <span>
-          <AppleOutlined />
+          {/* <AppleOutlined /> */}
+          {this.renderIcon(icon)}
           <span>{name}</span>
         </span>
       );
+    },
+    renderIcon(icon) {
+      if (icon === 'none' || icon === undefined) {
+        return null;
+      }
+      const props = {
+        icon: icon,
+      };
+
+      return <BaseIcon icon={icon} />;
     },
     renderSubMenu(menu) {
       const itemArr = [];
       if (menu.children && menu.children.length > 0) {
         menu.children.forEach((item) => itemArr.push(this.renderItem(item)));
         return (
-          <aSubMenu key={menu.path} title={this.renderTitle(menu.name)}>
+          <aSubMenu
+            key={menu.path}
+            title={this.renderTitle(
+              menu.name,
+              (menu.meta && menu.meta.icon) || 'none'
+            )}
+          >
+            {/* <span vSlot:title></span> */}
             {itemArr}
           </aSubMenu>
         );
