@@ -24,6 +24,7 @@
           @click="() => (collapsed = !collapsed)"
         />
       </a-layout-header>
+      <Breadcrumb />
       <!-- Content内容区域 -->
       <a-layout-content
         :style="{
@@ -39,6 +40,7 @@
   </a-layout>
 </template>
 <script>
+import Breadcrumb from './Breadcrumb';
 import {
   UserOutlined,
   VideoCameraOutlined,
@@ -57,6 +59,7 @@ export default {
     MenuFoldOutlined,
     AppleOutlined,
     BasicMenu, // 左侧菜单组件
+    Breadcrumb,
   },
   data() {
     return {

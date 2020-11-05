@@ -7,6 +7,7 @@ export const asyncRouterMap = [
       keepAlive: true,
       icon: 'icon-jiaoseguanli',
       permission: ['dashboard'],
+      breadcrumb: [{ name: '信用账本', path: '/credit' }, { name: '评分记录' }],
     },
     component: () => import('../views/RouterViewApp.vue'),
     children: [
@@ -19,6 +20,10 @@ export const asyncRouterMap = [
           keepAlive: true,
           icon: 'icon-jiaoseguanli',
           permission: ['dashboard'],
+          breadcrumb: [
+            { name: '信用账本', path: '/credit' },
+            { name: '评分记录' },
+          ],
         },
         children: [
           {
@@ -29,6 +34,10 @@ export const asyncRouterMap = [
               keepAlive: true,
               icon: 'icon-jiaoseguanli',
               permission: ['dashboard'],
+              breadcrumb: [
+                { name: '信用账本', path: '/credit' },
+                { name: '评分记录' },
+              ],
             },
             component: () => import('../views/home1.vue'),
           },

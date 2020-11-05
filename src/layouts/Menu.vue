@@ -6,6 +6,7 @@
     theme="dark"
     @select="onSelect"
     @openChange="onOpenChange"
+    :inline-collapsed="collapsed"
   >
     <template v-for="item in asyncRouterMap" :key="item.path">
       <template v-if="!item.children">
@@ -75,6 +76,14 @@ export default {
           : (data.openKeys = openKeys);
       }
       // { deep: true }
+    );
+    watch(
+      () => route.path,
+      (val) => {
+        if (val !== data.selectedKeys) {
+          data.selectedKeys = val;
+        }
+      }
     );
     const rootSubmenuKeys = computed(() => {
       const keys = [];
