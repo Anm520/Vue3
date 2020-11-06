@@ -81,7 +81,7 @@ export default {
       () => route.path,
       (val) => {
         if (val !== data.selectedKeys) {
-          data.selectedKeys = val;
+          data.selectedKeys = [val];
         }
       }
     );

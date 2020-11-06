@@ -5,9 +5,7 @@
         <div class="user-avatar">
           <div class="img"></div>
         </div>
-        <span class="user-name" style="margin-left: 10px">{{
-          userInfo && userInfo.userNickname
-        }}</span>
+        <span class="user-name" style="margin-left: 10px">{{ name }}</span>
 
         <DownOutlined style="margin-left: 10px" />
       </div>
@@ -17,7 +15,7 @@
             <a href="javascript:;" @click="handleUpdatePassword">修改密码</a>
           </a-menu-item> -->
           <a-menu-item>
-            <a href="javascript:;" @click="handleLogout">退出登录</a>
+            <a href="javascript:;" @click="removeUserInfo">退出登录</a>
           </a-menu-item>
         </a-menu>
       </template>
@@ -28,9 +26,19 @@
 <script>
 import { computed, ref, reactive } from 'vue';
 import { DownOutlined } from '@ant-design/icons-vue';
+import { mapGetters, mapActions } from 'vuex';
 export default {
   name: '',
-  setup() {},
+  setup(props, ctx) {
+    function handleLogout() {
+      this.removeUserInfo();
+    }
+    return {
+      handleLogout,
+    };
+  },
+  computed: mapGetters('user', ['name']),
+  methods: mapActions('user', ['removeUserInfo']),
   components: {
     DownOutlined,
   },
