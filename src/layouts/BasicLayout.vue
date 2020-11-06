@@ -23,6 +23,7 @@
           :style="{ fontSize: '28px' }"
           @click="() => (collapsed = !collapsed)"
         />
+        <Account />
       </a-layout-header>
       <Breadcrumb />
       <!-- Content内容区域 -->
@@ -41,6 +42,7 @@
 </template>
 <script>
 import Breadcrumb from './Breadcrumb';
+import Account from './Account';
 import {
   UserOutlined,
   VideoCameraOutlined,
@@ -60,6 +62,7 @@ export default {
     AppleOutlined,
     BasicMenu, // 左侧菜单组件
     Breadcrumb,
+    Account,
   },
   data() {
     return {
